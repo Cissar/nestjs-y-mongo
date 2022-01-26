@@ -16,13 +16,13 @@ export class NoticiaService {
         const Noticias = await this.noticiaModel.find();
         return Noticias;
     }
-    async getNoticia(productID?:string):Promise<Noticia>{
-        const Noticia = await this.noticiaModel.findById(productID);
+    async getNoticia(noticiaID?:string):Promise<Noticia>{
+        const Noticia = await this.noticiaModel.findById(noticiaID);
         return Noticia;
         
     }
-    async deleteNoticia(productID:string):Promise<Noticia>{
-        const deletedNoticia = await this.noticiaModel.findById(productID);
+    async deleteNoticia(noticiaID:string):Promise<Noticia>{
+        const deletedNoticia = await this.noticiaModel.findById(noticiaID);
         return deletedNoticia;
         
     }

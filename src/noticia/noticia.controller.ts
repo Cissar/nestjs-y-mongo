@@ -7,13 +7,10 @@ export class NoticiaController {
 
     constructor(private noticiaService:NoticiaService){}
 
-    @Post('/create')
-        createPost(@Res() res, @Body() noticiaDTO: NoticiasDTO) {
-         return res.status(HttpStatus.OK).json({
-                message: 'recibido'
-        });
+    @Get('/')
+    async getNoticias(@Res() res) {
+        const Noticias = await this.noticiaService.getNoticias();
+        return res.status(HttpStatus.OK).json(Noticias);
     }
-
-
 
 }

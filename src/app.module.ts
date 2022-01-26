@@ -7,7 +7,7 @@ import {MongooseModule} from '@nestjs/Mongoose'
 @Module({
   imports: [
     NoticiaModule,
-    MongooseModule.forRoot('mongodb://localhost/noticiasapi')
+    MongooseModule.forRoot('mongodb+srv://cesar:cesar@cluster0.9aauq.mongodb.net/noticiasapi')
   ],
   controllers: [AppController],
   providers: [AppService],
