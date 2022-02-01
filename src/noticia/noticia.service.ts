@@ -20,8 +20,12 @@ export class NoticiaService {
 
     
     async getNoticias():Promise<INoticia[ ]> {
-        const Noticias = await this.noticiaModel.find();
-        return Noticias;
+        try {
+            const Noticias = await this.noticiaModel.find().limit(10);
+            return Noticias;
+        }catch(e) {
+            throw new Error(e);
+        }
     }
     async getNoticia(noticiaID?:string):Promise<INoticia>{
         const Noticia = await this.noticiaModel.findById(noticiaID);
